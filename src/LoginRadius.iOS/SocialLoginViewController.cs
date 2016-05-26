@@ -47,6 +47,12 @@ namespace LoginRadius.iOS
                         WebView.LoadRequest (new NSUrlRequest (new NSUrl (url)));
                 }
 
+                public override void ViewWillDisappear (bool animated)
+                {
+                        base.ViewWillDisappear (animated);
+                        WebView.StopLoading ();
+                }
+
                 public override void ViewDidLayoutSubviews ()
                 {
                         WebView.Frame = new CGRect (0, 0, View.Frame.Size.Width, View.Frame.Size.Height);
@@ -54,14 +60,8 @@ namespace LoginRadius.iOS
 
                 private bool ShouldStartLoadWithRequest (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
                 {
-                        Console.Write (request.Url.ToString ());
-
                         if (request.Url.AbsoluteString.IndexOf ("token") != -1 && request.Url.Path.Equals ("/mobile.aspx")) {
-                                this.DismissViewController (true, null);
-
-
                                 NameValueCollection parameters = HttpUtility.ParseQueryString (request.Url.Query);
-
                                 string token = parameters ["token"];
 
                                 if (!String.IsNullOrEmpty (token)) {

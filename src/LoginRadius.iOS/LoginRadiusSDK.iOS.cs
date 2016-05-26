@@ -6,7 +6,7 @@ namespace LoginRadius.iOS
 {
         public partial class LoginRadiusSDK
         {
-                public Task<string> RegistrationService (string action, string language, UIViewController parent)
+                public static Task<string> RegistrationService (string action, string language, UIViewController parent)
                 {
                         var rsCompletion = new TaskCompletionSource<string> ();
 
@@ -18,7 +18,7 @@ namespace LoginRadius.iOS
                         return rsCompletion.Task;
                 }
 
-                public Task<string> SocialLogin (string provider, UIViewController parent)
+                public static Task<string> SocialLogin (string provider, UIViewController parent)
                 {
                         var loginCompletion = new TaskCompletionSource<string> ();
 
@@ -30,7 +30,7 @@ namespace LoginRadius.iOS
                         return loginCompletion.Task;
                 }
 
-                public void Logout ()
+                public static void Logout ()
                 {
 			
                 }

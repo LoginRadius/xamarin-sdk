@@ -65,6 +65,12 @@ namespace LoginRadius.iOS
                         WebView.LoadRequest (new NSUrlRequest (new NSUrl (url)));
                 }
 
+                public override void ViewWillDisappear (bool animated)
+                {
+                        base.ViewWillDisappear (animated);
+                        WebView.StopLoading ();
+                }
+
                 public override void ViewDidLayoutSubviews ()
                 {
                         WebView.Frame = new CGRect (0, 0, View.Frame.Size.Width, View.Frame.Size.Height);
@@ -72,42 +78,41 @@ namespace LoginRadius.iOS
 
                 private bool ShouldStartLoadWithRequest (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
                 {
-                        Console.Write (request.Url.ToString ());
-
                         NameValueCollection parameters = HttpUtility.ParseQueryString (request.Url.Query);
                         string returnAction = parameters ["action"];
                         string absString = request.Url.AbsoluteString;
 
-                        if (returnAction.Equals ("registration")) {
+                        if (!string.IsNullOrEmpty (returnAction)) {
 
-                                if (absString.IndexOf ("status") != -1) {
-                                        this.finishRaaSAction (true, null);
-                                }
-            
-                        } else if (returnAction.Equals ("login")) {
-                                if (absString.IndexOf ("lrtoken") != -1) {
-                                        string token = parameters ["lrtoken"];
+                                if (returnAction.Equals ("registration")) {
+                                        if (absString.IndexOf ("status") != -1) {
+                                                this.finishRaaSAction (true, null);
+                                        }
 
-                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                        completion.SetResult (userProfile);
-                                        this.finishRaaSAction (true, null);
-                                }
+                                } else if (returnAction.Equals ("login")) {
+                                        if (absString.IndexOf ("lrtoken") != -1) {
+                                                string token = parameters ["lrtoken"];
 
-                        } else if (returnAction.Equals ("forgotpassword")) {
+                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                completion.SetResult (userProfile);
+                                                this.finishRaaSAction (true, null);
+                                        }
 
-                                if (absString.IndexOf ("status") != -1) {
-                                        this.finishRaaSAction (true, null);
-                                }
+                                } else if (returnAction.Equals ("forgotpassword")) {
+                                        if (absString.IndexOf ("status") != -1) {
+                                                this.finishRaaSAction (true, null);
+                                        }
 
-                        } else if (returnAction.Equals ("sociallogin")) {
-
-                                if (absString.IndexOf ("lrtoken") != -1) {
-                                        string token = parameters ["lrtoken"];
-                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                        completion.SetResult (userProfile);
-                                        this.finishRaaSAction (true, null);
+                                } else if (returnAction.Equals ("sociallogin")) {
+                                        if (absString.IndexOf ("lrtoken") != -1) {
+                                                string token = parameters ["lrtoken"];
+                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                completion.SetResult (userProfile);
+                                                this.finishRaaSAction (true, null);
+                                        }
                                 }
                         }
+
                         return true;
                 }
 
