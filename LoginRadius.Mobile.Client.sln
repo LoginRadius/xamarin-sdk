@@ -23,6 +23,7 @@ Global
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.TextStylePolicy = $1
+		$1.TabsToSpaces = True
 		$1.inheritsSet = Mono
 		$1.inheritsScope = text/plain
 		$1.scope = text/x-csharp
