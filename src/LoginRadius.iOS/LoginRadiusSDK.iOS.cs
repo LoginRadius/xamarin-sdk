@@ -6,9 +6,16 @@ namespace LoginRadius.iOS
 {
 	public partial class LoginRadiusSDK
 	{
-		public void RegistrationService (string action, UIViewController parent) 
+        public Task<string> RegistrationService (string action, string language, UIViewController parent) 
 		{
+            var rsCompletion = new TaskCompletionSource<string> ();
 
+            RegistrationServiceViewController rvc = new RegistrationServiceViewController (action, language,rsCompletion);
+            UINavigationController navVC = new UINavigationController(rvc);
+
+            parent.PresentViewController (navVC, false, null);
+
+            return rsCompletion.Task;
 		}
 
         public Task<string> SocialLogin (string provider, UIViewController parent) 

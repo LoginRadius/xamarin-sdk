@@ -47,9 +47,14 @@
       <DependentUpon>SocialLoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RestClient.cs" />
+    <Compile Include="RegistrationServiceViewController.cs" />
+    <Compile Include="RegistrationServiceViewController.designer.cs">
+      <DependentUpon>RegistrationServiceViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="SocialLoginViewController.xib" />
+    <InterfaceDefinition Include="RegistrationServiceViewController.xib" />
   </ItemGroup>
 </Project>

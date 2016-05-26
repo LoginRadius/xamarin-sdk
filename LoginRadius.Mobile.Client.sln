@@ -20,4 +20,38 @@ Global
 		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = Mono
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+		$0.TextStylePolicy = $4
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/plain
+		$4.scope = application/xml
+		$0.XmlFormattingPolicy = $5
+		$5.inheritsSet = Mono
+		$5.inheritsScope = application/xml
+		$5.scope = application/xml
+		$0.TextStylePolicy = $6
+		$6.inheritsSet = Mono
+		$6.inheritsScope = text/plain
+		$6.scope = application/vnd.apple-interface-builder
+		$0.XmlFormattingPolicy = $7
+		$7.inheritsSet = Mono
+		$7.inheritsScope = application/xml
+		$7.scope = application/vnd.apple-interface-builder
+		$0.StandardHeader = $8
+		$8.Text = 
+		$8.IncludeInNewFiles = True
+	EndGlobalSection
 EndGlobal
