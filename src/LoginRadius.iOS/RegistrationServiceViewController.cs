@@ -121,7 +121,6 @@ namespace LoginRadius.iOS
                 public void CancelPressed ()
                 {
                         this.DismissViewController (true, null);
-                        // this will crash the app with exception
                         completion.SetCanceled ();
                 }
 
