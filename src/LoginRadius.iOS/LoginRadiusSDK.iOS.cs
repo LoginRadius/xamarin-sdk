@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using UIKit;
+using Foundation;
 
 namespace LoginRadius.iOS
 {
@@ -32,7 +33,10 @@ namespace LoginRadius.iOS
 
                 public static void Logout ()
                 {
-			
+                        NSHttpCookieStorage storage = NSHttpCookieStorage.SharedStorage;
+                        foreach (NSHttpCookie cookie in storage.Cookies) {
+                                storage.DeleteCookie (cookie);
+                        }
                 }
         }
 }
