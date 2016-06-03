@@ -1,7 +1,7 @@
 ﻿using System;
 using ObjCRuntime;
 using UIKit;
-using LoginRadius.iOS;
+using LoginRadius.SDK;
 using Foundation;
 
 namespace LoginRadius.iOS.Sample
@@ -23,10 +23,10 @@ namespace LoginRadius.iOS.Sample
         async void LoginWithFacebookHandler ()
         {
             try {
-                string user = await LoginRadiusSDK.SocialLogin("facebook", this);
+                string user = await LoginRadiusSDK.SocialLogin(provider:"facebook", parent:this);
                 Console.WriteLine(user);
             } catch {
-            
+                
             }
         }
 
@@ -53,7 +53,7 @@ namespace LoginRadius.iOS.Sample
         async partial void UIButton45_TouchUpInside(UIButton sender)
         {
             try {
-                string user = await LoginRadiusSDK.RegistrationService("login", "", this);
+                string user = await LoginRadiusSDK.RegistrationService(action:"login", language:null, parent:this);
                 Console.WriteLine(user);
             } catch {
                 

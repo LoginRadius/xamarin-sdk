@@ -1,6 +1,6 @@
 ﻿using Foundation;
 using UIKit;
-using LoginRadius.iOS;
+using LoginRadius.SDK;
 
 namespace LoginRadius.iOS.Sample
 {
@@ -20,7 +20,9 @@ namespace LoginRadius.iOS.Sample
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-            LoginRadiusSDK sc = new LoginRadiusSDK("<you api key>", "<your site name>");
+            LoginRadiusSDK.ApiKey = " your loginradius key";
+            LoginRadiusSDK.SiteName = " your sitename";
+
 			return true;
 		}
 

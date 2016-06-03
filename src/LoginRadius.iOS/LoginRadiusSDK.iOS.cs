@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using UIKit;
 using Foundation;
 
-namespace LoginRadius.iOS
+namespace LoginRadius.SDK
 {
         public partial class LoginRadiusSDK
         {

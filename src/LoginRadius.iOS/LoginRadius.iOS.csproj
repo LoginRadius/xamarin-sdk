@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{5AC5EED4-D4E5-41CA-A011-ED64DFA77091}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>LoginRadius.iOS</RootNamespace>
+    <RootNamespace>LoginRadius.SDK</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>LoginRadius.iOS</AssemblyName>
   </PropertyGroup>
@@ -34,6 +34,12 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="Refractored.Xam.Settings">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.1.5.2\lib\Xamarin.iOS10\Refractored.Xam.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.Xam.Settings.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.1.5.2\lib\Xamarin.iOS10\Refractored.Xam.Settings.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -51,6 +57,17 @@
     <Compile Include="RegistrationServiceViewController.designer.cs">
       <DependentUpon>RegistrationServiceViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginRadiusSettings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <XamarinComponentReference Include="SettingsPlugin">
+      <Version>1.5.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PluginsHelp\SettingsReadme.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@ using CoreGraphics;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
 
-namespace LoginRadius.iOS
+namespace LoginRadius.SDK
 {
         public partial class SocialLoginViewController : UIViewController
         {
@@ -65,6 +65,7 @@ namespace LoginRadius.iOS
                                 string token = parameters ["token"];
 
                                 if (!String.IsNullOrEmpty (token)) {
+                                        LoginRadiusSettings.LoginRadiusAccessToken = token;
                                         string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
                                         this.DismissViewController (true, null);
                                         completion.SetResult (userProfile);

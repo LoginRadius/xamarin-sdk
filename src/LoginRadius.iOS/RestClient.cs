@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LoginRadius.iOS
+namespace LoginRadius.SDK
 {
         public enum HttpMethod
         {

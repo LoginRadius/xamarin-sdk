@@ -1,20 +1,12 @@
 ﻿using System;
 
-namespace LoginRadius.iOS
+namespace LoginRadius.SDK
 {
-        public partial class LoginRadiusSDK
+        public static partial class LoginRadiusSDK
         {
                 public static string ApiKey { get; set; }
 
                 public static string SiteName { get; set; }
-
-
-                public LoginRadiusSDK (string apiKey, string siteName)
-                {
-                        ApiKey = apiKey;
-                        SiteName = siteName;
-                }
-			
         }
 }
 

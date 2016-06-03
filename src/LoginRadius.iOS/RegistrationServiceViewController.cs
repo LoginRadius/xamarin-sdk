@@ -7,7 +7,7 @@ using Foundation;
 using CoreGraphics;
 using ObjCRuntime;
 
-namespace LoginRadius.iOS
+namespace LoginRadius.SDK
 {
         public partial class RegistrationServiceViewController : UIViewController
         {
@@ -86,29 +86,42 @@ namespace LoginRadius.iOS
 
                                 if (returnAction.Equals ("registration")) {
                                         if (absString.IndexOf ("status") != -1) {
-                                                this.finishRaaSAction (true, null);
+                                                this.DismissViewControllerAsync(true);
                                         }
 
                                 } else if (returnAction.Equals ("login")) {
                                         if (absString.IndexOf ("lrtoken") != -1) {
                                                 string token = parameters ["lrtoken"];
 
-                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                completion.SetResult (userProfile);
-                                                this.finishRaaSAction (true, null);
+                                                if (!string.IsNullOrEmpty (token)) {
+                                                        LoginRadiusSettings.LoginRadiusAccessToken = token;
+                                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                        completion.SetResult (userProfile);
+                                                } else {
+                                                        completion.SetException (new Exception ("Empty or null token"));
+                                                }
+
+                                                this.DismissViewControllerAsync(true);
                                         }
 
                                 } else if (returnAction.Equals ("forgotpassword")) {
                                         if (absString.IndexOf ("status") != -1) {
-                                                this.finishRaaSAction (true, null);
+                                                this.DismissViewControllerAsync(true);
                                         }
 
                                 } else if (returnAction.Equals ("sociallogin")) {
                                         if (absString.IndexOf ("lrtoken") != -1) {
                                                 string token = parameters ["lrtoken"];
-                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                completion.SetResult (userProfile);
-                                                this.finishRaaSAction (true, null);
+
+                                                if (!string.IsNullOrEmpty (token)) {
+                                                        LoginRadiusSettings.LoginRadiusAccessToken = token;
+                                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                        completion.SetResult (userProfile);
+                                                } else {
+                                                        completion.SetException (new Exception ("Empty or null token"));
+                                                }
+
+                                                this.DismissViewControllerAsync(true);
                                         }
                                 }
                         }
@@ -120,15 +133,8 @@ namespace LoginRadius.iOS
                 [Export ("CancelPressed")]
                 public void CancelPressed ()
                 {
-                        this.DismissViewController (true, null);
+                        this.DismissViewControllerAsync (true);
                         completion.SetCanceled ();
-                }
-
-                public void finishRaaSAction (bool success, NSError error)
-                {
-                        if (success) {
-                                this.DismissViewController (true, null);
-                        }
                 }
         }
 }
