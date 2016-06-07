@@ -78,53 +78,58 @@ namespace LoginRadius.SDK
 
                 private bool ShouldStartLoadWithRequest (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
                 {
-                        NameValueCollection parameters = HttpUtility.ParseQueryString (request.Url.Query);
-                        string returnAction = parameters ["action"];
-                        string absString = request.Url.AbsoluteString;
+                 
+                        if (!string.IsNullOrEmpty (request.Url.Query)) {
+                                NameValueCollection parameters = HttpUtility.ParseQueryString (request.Url.Query);
+                                string returnAction = parameters ["action"];
+                                string absString = request.Url.AbsoluteString;
 
-                        if (!string.IsNullOrEmpty (returnAction)) {
+                                if (!string.IsNullOrEmpty (returnAction)) {
 
-                                if (returnAction.Equals ("registration")) {
-                                        if (absString.IndexOf ("status") != -1) {
-                                                this.DismissViewControllerAsync(true);
-                                        }
-
-                                } else if (returnAction.Equals ("login")) {
-                                        if (absString.IndexOf ("lrtoken") != -1) {
-                                                string token = parameters ["lrtoken"];
-
-                                                if (!string.IsNullOrEmpty (token)) {
-                                                        LoginRadiusSettings.LoginRadiusAccessToken = token;
-                                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                        completion.SetResult (userProfile);
-                                                } else {
-                                                        completion.SetException (new Exception ("Empty or null token"));
+                                        if (returnAction.Equals ("registration")) {
+                                                if (absString.IndexOf ("status") != -1) {
+                                                        this.DismissViewControllerAsync (true);
                                                 }
 
-                                                this.DismissViewControllerAsync(true);
-                                        }
+                                        } else if (returnAction.Equals ("login")) {
+                                                if (absString.IndexOf ("lrtoken") != -1) {
+                                                        string token = parameters ["lrtoken"];
 
-                                } else if (returnAction.Equals ("forgotpassword")) {
-                                        if (absString.IndexOf ("status") != -1) {
-                                                this.DismissViewControllerAsync(true);
-                                        }
+                                                        if (!string.IsNullOrEmpty (token)) {
+                                                                LoginRadiusSettings.LoginRadiusAccessToken = token;
+                                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                                completion.SetResult (userProfile);
+                                                        } else {
+                                                                completion.SetException (new Exception ("Empty or null token"));
+                                                        }
 
-                                } else if (returnAction.Equals ("sociallogin")) {
-                                        if (absString.IndexOf ("lrtoken") != -1) {
-                                                string token = parameters ["lrtoken"];
-
-                                                if (!string.IsNullOrEmpty (token)) {
-                                                        LoginRadiusSettings.LoginRadiusAccessToken = token;
-                                                        string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                        completion.SetResult (userProfile);
-                                                } else {
-                                                        completion.SetException (new Exception ("Empty or null token"));
+                                                        this.DismissViewControllerAsync (true);
                                                 }
 
-                                                this.DismissViewControllerAsync(true);
+                                        } else if (returnAction.Equals ("forgotpassword")) {
+                                                if (absString.IndexOf ("status") != -1) {
+                                                        this.DismissViewControllerAsync (true);
+                                                }
+
+                                        } else if (returnAction.Equals ("sociallogin")) {
+                                                if (absString.IndexOf ("lrtoken") != -1) {
+                                                        string token = parameters ["lrtoken"];
+
+                                                        if (!string.IsNullOrEmpty (token)) {
+                                                                LoginRadiusSettings.LoginRadiusAccessToken = token;
+                                                                string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
+                                                                completion.SetResult (userProfile);
+                                                        } else {
+                                                                completion.SetException (new Exception ("Empty or null token"));
+                                                        }
+
+                                                        this.DismissViewControllerAsync (true);
+                                                }
                                         }
                                 }
+          
                         }
+                        
 
                         return true;
                 }
