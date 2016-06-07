@@ -9,6 +9,7 @@ Components/
 [Bb]in/
 packages/
 TestResults/
+*.xam
 
 # globs
 Makefile.in
