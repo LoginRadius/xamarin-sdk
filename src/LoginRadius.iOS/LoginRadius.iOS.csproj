@@ -59,6 +59,8 @@
     </Compile>
     <Compile Include="LoginRadiusSettings.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="LoginRadiusResponse.cs" />
+    <Compile Include="LoginRadiusHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

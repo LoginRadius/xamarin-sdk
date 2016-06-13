@@ -16,7 +16,7 @@ namespace LoginRadius.SDK
                 string Action;
                 string Language;
 
-                TaskCompletionSource<string> completion;
+                LoginRadiusHandler completion;
 
 
                 public RegistrationServiceViewController ()
@@ -24,17 +24,17 @@ namespace LoginRadius.SDK
                 {
                 }
 
-                public RegistrationServiceViewController (string registrationAction, TaskCompletionSource<string> comp)
+                public RegistrationServiceViewController (string registrationAction, LoginRadiusHandler handler)
                 {
                         Action = registrationAction;
-                        completion = comp;
+                        completion = handler;
                         Language = "";
                 }
 
-                public RegistrationServiceViewController (string registrationAction, string language, TaskCompletionSource<string> comp)
+                public RegistrationServiceViewController (string registrationAction, string language, LoginRadiusHandler handler)
                 {
                         Action = registrationAction;
-                        completion = comp;
+                        completion = handler;
                         Language = language;
                 }
 
@@ -87,40 +87,44 @@ namespace LoginRadius.SDK
                                 if (!string.IsNullOrEmpty (returnAction)) {
 
                                         if (returnAction.Equals ("registration")) {
-                                                if (absString.IndexOf ("status") != -1) {
-                                                        this.DismissViewControllerAsync (true);
+                                                if (absString.IndexOf ("status", StringComparison.Ordinal) != -1) {
+							completion.onSuccess ("");
+							this.DismissViewControllerAsync (true);
                                                 }
 
                                         } else if (returnAction.Equals ("login")) {
-                                                if (absString.IndexOf ("lrtoken") != -1) {
+                                                if (absString.IndexOf ("lrtoken", StringComparison.Ordinal) != -1) {
                                                         string token = parameters ["lrtoken"];
 
                                                         if (!string.IsNullOrEmpty (token)) {
                                                                 LoginRadiusSettings.LoginRadiusAccessToken = token;
                                                                 string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                                completion.SetResult (userProfile);
+								LoginRadiusSettings.LoginRadiusUserProfile = userProfile;
+								completion.onSuccess (userProfile);
                                                         } else {
-                                                                completion.SetException (new Exception ("Empty or null token"));
+								completion.onFailure ("Empty or null token");
                                                         }
 
                                                         this.DismissViewControllerAsync (true);
                                                 }
 
                                         } else if (returnAction.Equals ("forgotpassword")) {
-                                                if (absString.IndexOf ("status") != -1) {
+                                                if (absString.IndexOf ("status", StringComparison.Ordinal) != -1) {
+							completion.onSuccess ("");
                                                         this.DismissViewControllerAsync (true);
                                                 }
 
                                         } else if (returnAction.Equals ("sociallogin")) {
-                                                if (absString.IndexOf ("lrtoken") != -1) {
+                                                if (absString.IndexOf ("lrtoken", StringComparison.Ordinal) != -1) {
                                                         string token = parameters ["lrtoken"];
 
                                                         if (!string.IsNullOrEmpty (token)) {
                                                                 LoginRadiusSettings.LoginRadiusAccessToken = token;
                                                                 string userProfile = RestClient.Request (string.Format ("https://api.loginradius.com/api/v2/userprofile?access_token={0}", token), null, HttpMethod.GET);
-                                                                completion.SetResult (userProfile);
-                                                        } else {
-                                                                completion.SetException (new Exception ("Empty or null token"));
+								LoginRadiusSettings.LoginRadiusUserProfile = userProfile;
+								completion.onSuccess (userProfile);
+							} else {
+								completion.onFailure ("Empty or null token");
                                                         }
 
                                                         this.DismissViewControllerAsync (true);
@@ -139,7 +143,7 @@ namespace LoginRadius.SDK
                 public void CancelPressed ()
                 {
                         this.DismissViewControllerAsync (true);
-                        completion.SetCanceled ();
+			completion.onFailure ("Registration Service cancelled");
                 }
         }
 }

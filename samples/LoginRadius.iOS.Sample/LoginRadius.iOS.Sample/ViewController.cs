@@ -8,12 +8,12 @@ namespace LoginRadius.iOS.Sample
 {
     public partial class ViewController : UIViewController
     {
-        public ViewController(IntPtr p) : base(p)
+        public ViewController (IntPtr p) : base (p)
         {
         }
-        public override void ViewDidLoad()
+        public override void ViewDidLoad ()
         {
-            base.ViewDidLoad();
+            base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
 
             facebookLogin.AddTarget (this, new Selector ("LoginWithFacebook"), UIControlEvent.TouchUpInside);
@@ -22,48 +22,37 @@ namespace LoginRadius.iOS.Sample
         [Export ("LoginWithFacebook")]
         async void LoginWithFacebookHandler ()
         {
-            try {
-                string user = await LoginRadiusSDK.SocialLogin(provider:"facebook", parent:this);
-                Console.WriteLine(user);
-            } catch {
-                
-            }
+            LoginRadiusResponse res = await LoginRadiusSDK.SocialLogin (provider: "facebook", parent: this);
+            Console.WriteLine (res.ToString ());
         }
 
-        async partial void TwitterLogin_TouchUpInside(UIButton sender)
+        async partial void TwitterLogin_TouchUpInside (UIButton sender)
         {
-            try {
-                string user = await LoginRadiusSDK.SocialLogin("twitter", this);
-                Console.WriteLine(user);    
-            } catch {
-                
-            }
+            LoginRadiusResponse res = await LoginRadiusSDK.SocialLogin ("twitter", this);
+            Console.WriteLine (res.ToString ());
         }
 
-        async partial void UIButton37_TouchUpInside(UIButton sender)
+        async partial void UIButton37_TouchUpInside (UIButton sender)
         {
-            try {
-                string user = await LoginRadiusSDK.RegistrationService("registration", null, this);
-                Console.WriteLine(user);
-            } catch {
-                
-            }
+            LoginRadiusResponse res = await LoginRadiusSDK.RegistrationService ("registration", null, this);
+            Console.WriteLine (res.ToString ());
         }
 
-        async partial void UIButton45_TouchUpInside(UIButton sender)
+        async partial void UIButton45_TouchUpInside (UIButton sender)
         {
-            try {
-                string user = await LoginRadiusSDK.RegistrationService(action:"login", language:null, parent:this);
-                Console.WriteLine(user);
-            } catch {
-                
-            }
+            LoginRadiusResponse res = await LoginRadiusSDK.RegistrationService (action: "login", language: null, parent: this);
+            Console.WriteLine (res.ToString ());
         }
 
-        public override void DidReceiveMemoryWarning()
+        public override void DidReceiveMemoryWarning ()
         {
-            base.DidReceiveMemoryWarning();
+            base.DidReceiveMemoryWarning ();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        partial void Logout_TouchUpInside (UIButton sender)
+        {
+            LoginRadiusSDK.Logout ();
         }
     }
 }
