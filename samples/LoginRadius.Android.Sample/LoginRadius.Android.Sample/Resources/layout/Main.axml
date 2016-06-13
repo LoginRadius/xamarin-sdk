@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffeceff1">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_gravity="center"
+        android:layout_weight="100">
+        <Button
+            android:text="@string/facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facebook"
+            android:background="#3b5998"
+            android:height="50dp" />
+        <Button
+            android:text="@string/twitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/twitter"
+            android:background="#55acee"
+            android:height="50dp" />
+        <Button
+            android:text="@string/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup"
+            android:height="50dp" />
+        <Button
+            android:text="@string/singin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signin"
+            android:height="50dp" />
+        <Button xmlns:tools="http://schemas.android.com/tools"
+            android:text="@string/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout"
+            tools:visibility="invisible"
+            android:height="50dp" />
+    </LinearLayout>
+</LinearLayout>
