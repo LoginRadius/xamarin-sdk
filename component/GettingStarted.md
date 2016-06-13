@@ -56,4 +56,11 @@ LoginRadiusSDK.Logout();
 
 ```
 
+### Access token and User Profile
+
+After successful login or social login lognradius access token and user profile can be accessed by
+
+string user_profile = LoginRadiusSettings.LoginRadiusUserProfile;
+string accesss_token = LoginRadiusSettings.LoginRadiusAccessToken;
+
 Check the demo app for social login and user registration in action by setting your API key and sitename
