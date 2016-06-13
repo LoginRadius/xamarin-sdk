@@ -11,7 +11,7 @@ Please visit [here](http://www.loginradius.com/) for more information.
 ## Getting started for iOS
 
 ### Requirements
-You'll need iOS 8 or later.
+You'll need iOS 8 or later/Android API level 10 or later
 
 ### Init
 Intilize the SDK with your API key and Sitename
@@ -46,9 +46,9 @@ string user = await LoginRadiusSDK.RegistrationService(action:"login", language:
 Social Login with the given provider.
 
 ```
-// Pass a UIViewController as parent
+// Pass a UIViewController/Activity as parent
 
-string user = await LoginRadiusSDK.SocialLogin(provider:"facebook", parent:this);
+LoginRadiusResponse res = await LoginRadiusSDK.SocialLogin (provider: "facebook", parent: this);
 
 ```
 
@@ -60,4 +60,4 @@ LoginRadiusSDK.Logout();
 
 ```
 
-Check the demo app for sample implementations of Registration Service and Social Login.
+Check the demo app for social login and user registration in action by setting your API key and sitename

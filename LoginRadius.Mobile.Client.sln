@@ -5,6 +5,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginRadius.Android", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginRadius.iOS", "src\LoginRadius.iOS\LoginRadius.iOS.csproj", "{5AC5EED4-D4E5-41CA-A011-ED64DFA77091}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF02FCED-BAAD-436D-976D-3CC6BBC19156}"
+	ProjectSection(SolutionItems) = preProject
+		component\component.yaml = component\component.yaml
+		component\Details.md = component\Details.md
+		component\GettingStarted.md = component\GettingStarted.md
+		component\License.md = component\License.md
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,7 +35,7 @@ Global
 		$1.TabsToSpaces = True
 		$1.inheritsSet = Mono
 		$1.inheritsScope = text/plain
-		$1.scope = text/x-csharp
+		$1.scope = application/vnd.apple-interface-builder
 		$0.CSharpFormattingPolicy = $2
 		$2.inheritsSet = Mono
 		$2.inheritsScope = text/x-csharp
@@ -42,7 +51,7 @@ Global
 		$0.XmlFormattingPolicy = $5
 		$5.inheritsSet = Mono
 		$5.inheritsScope = application/xml
-		$5.scope = application/xml
+		$5.scope = application/vnd.apple-interface-builder
 		$0.TextStylePolicy = $6
 		$6.inheritsSet = Mono
 		$6.inheritsScope = text/plain

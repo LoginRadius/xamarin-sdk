@@ -8,7 +8,7 @@ LoginRadius helps businesses boost user engagement on their web/mobile platform,
 
 Please visit [here](http://www.loginradius.com/) for more information.
 
-## Getting started for iOS
+## Getting started for iOS/Android
 
 ### Init
 Intilize the SDK with your API key and Sitename
@@ -30,11 +30,10 @@ Supported actions are __login__, __registration__, __forgotpassword__, __social_
 
 Supported languages are __spanish__, __french__, __german__. For customization please contact [LoginRadius Support](http://support.loginradius.com/hc/en-us/requests/new)
 
-
 ```
-// Pass a UIViewController as parent
+// Pass a UIViewController/Activity as parent
 
-string user = await LoginRadiusSDK.RegistrationService(action:"login", language:null, parent:this);
+LoginRadiusResponse res = await LoginRadiusSDK.RegistrationService (action: "login", language: null, parent: this);
 
 ```
 
@@ -43,9 +42,9 @@ string user = await LoginRadiusSDK.RegistrationService(action:"login", language:
 Social Login with the given provider.
 
 ```
-// Pass a UIViewController as parent
+// Pass a UIViewController/Activity as parent
 
-string user = await LoginRadiusSDK.SocialLogin(provider:"facebook", parent:this);
+LoginRadiusResponse res = await LoginRadiusSDK.SocialLogin (provider: "facebook", parent: this);
 
 ```
 
@@ -57,4 +56,4 @@ LoginRadiusSDK.Logout();
 
 ```
 
-Check the demo app for social login.
+Check the demo app for social login and user registration in action by setting your API key and sitename
