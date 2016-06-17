@@ -33,11 +33,10 @@ Supported actions are __login__, __registration__, __forgotpassword__, __social_
 
 Supported languages are __spanish__, __french__, __german__. For customization please contact [LoginRadius Support](http://support.loginradius.com/hc/en-us/requests/new)
 
-
 ```
-// Pass a UIViewController as parent
+// Pass a UIViewController/Activity as parent
 
-string user = await LoginRadiusSDK.RegistrationService(action:"login", language:null, parent:this);
+LoginRadiusResponse res = await LoginRadiusSDK.RegistrationService (action: "login", language: null, parent: this);
 
 ```
 
@@ -67,4 +66,4 @@ After successful login or social login lognradius access token and user profile 
 string user_profile = LoginRadiusSettings.LoginRadiusUserProfile;
 string accesss_token = LoginRadiusSettings.LoginRadiusAccessToken;
 
-Check the demo app for social login and user registration in action by setting your API key and sitename
+Check the demo app for social login and user registration in action by setting your API key and sitenamen and user registration in action by setting your API key and sitename
