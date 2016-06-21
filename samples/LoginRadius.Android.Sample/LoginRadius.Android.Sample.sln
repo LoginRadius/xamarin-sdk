@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginRadius.Android.Sample", "LoginRadius.Android.Sample\LoginRadius.Android.Sample.csproj", "{B6477FA8-E537-4A7C-BFD9-FC8A052D3471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginRadius.Android", "..\..\src\LoginRadius.Android\LoginRadius.Android.csproj", "{CE24E06D-E3AF-4F72-9E0F-71D02E926366}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6477FA8-E537-4A7C-BFD9-FC8A052D3471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6477FA8-E537-4A7C-BFD9-FC8A052D3471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6477FA8-E537-4A7C-BFD9-FC8A052D3471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6477FA8-E537-4A7C-BFD9-FC8A052D3471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE24E06D-E3AF-4F72-9E0F-71D02E926366}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
