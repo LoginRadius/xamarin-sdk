@@ -8,7 +8,12 @@ LoginRadius helps businesses boost user engagement on their web/mobile platform,
 
 Please visit [here](http://www.loginradius.com/) for more information.
 
+Please refer to the documentation for step by step implementation details. [Link](http://apidocs.loginradius.com/docs/xamarin-library-v1)
+
 ## Getting started for iOS/Android
+
+### Requirements
+You'll need iOS 8 or later/Android API level 10 or later
 
 ### Init
 Intilize the SDK with your API key and Sitename
@@ -60,7 +65,9 @@ LoginRadiusSDK.Logout();
 
 After successful login or social login lognradius access token and user profile can be accessed by
 
+```
 string user_profile = LoginRadiusSettings.LoginRadiusUserProfile;
 string accesss_token = LoginRadiusSettings.LoginRadiusAccessToken;
 
+```
 Check the demo app for social login and user registration in action by setting your API key and sitename

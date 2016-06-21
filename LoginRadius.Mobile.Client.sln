@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		component\GettingStarted.md = component\GettingStarted.md
 		component\License.md = component\License.md
 		README.md = README.md
+		CHANGELOG.md = CHANGELOG.md
 	EndProjectSection
 EndProject
 Global
@@ -35,7 +36,7 @@ Global
 		$1.TabsToSpaces = True
 		$1.inheritsSet = Mono
 		$1.inheritsScope = text/plain
-		$1.scope = application/vnd.apple-interface-builder
+		$1.scope = application/xml
 		$0.CSharpFormattingPolicy = $2
 		$2.inheritsSet = Mono
 		$2.inheritsScope = text/x-csharp
