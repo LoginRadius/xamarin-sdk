@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:id="@+id/fb"
+            android:background="@drawable/fbicon" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:id="@+id/or"
+            android:layout_marginTop="15dp"
+            android:weightSum="1">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0.4"
+                android:background="#B6B6B4" />
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="or"
+                android:textSize="20dp"
+                android:layout_weight="0.2"
+                android:textColor="#657383" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_weight="0.4"
+                android:background="#B6B6B4" />
+        </LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Email"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:textColor="#2299dd"
+            android:layout_marginTop="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Password"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:id="@+id/password"
+            android:inputType="textPassword"
+            android:textColor="#2299dd"
+            android:layout_marginTop="10dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/dologin"
+            android:textColor="#fff"
+            android:background="#2299dd"
+            android:text="Login" />
+    </LinearLayout>
+</LinearLayout>

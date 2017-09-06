@@ -1,39 +1,20 @@
-1.1.1 Release notes (2016-05-21)
-=============================================================
+> **LoginRadius Xamarin SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documention](https://docs.loginradius.com/api/v2/mobile-libraries/xamarin-library)
 
-### API breaking changes
 
-### Enhancements
+### Version 2.0.0
+Released on **September 06,  2017**
 
-* Better documentation
+##### Enhancements
 
-### Bugfixes
-
-1.1 Release notes (2016-05-13)
-=============================================================
-
-### API breaking changes
-* LoginRadius API calls returns a LoginRadiusResponse object instead of user 
-profile, this will result better implementation since some service calls doesn't
-return user profile.
-
-### Enhancements
-
-* Better response for Registration Service and Social Login services.
-* Added support for Android - API level should be above 10.
-* Android sample app.
-* Storing LoginRadiusAccessToken and LoginRadiusUserProfile.
-
-### Bugfixes
-
-1.0 Release notes (2016-06-07)
-=============================================================
-
-New SDK supporting Registration Service and Social Login for Xamarin iOS
-
-### API breaking changes
-
-### Enhancements
-* iOS sample app
-
-### Bugfixes
+  - Remove hosted page dependency from LoginRadius xamarin SDK.
+  - Added phone number and username login.
+  - Fully customizable SDK.
+  - Added new multiple APIs for better user experience.
+  - Added new access token validate and invalidate APIs.
+  - Added new email prompt auto login feature in SDK for smart tv OS.
+  - End user add and remove multiple emails.
+  - Added update profile feature in SDK.
+  - Significantly improved code performance.
+  - Handled network connection error and failures.
+  - Tiny size overhead to your application, below 235kb for everything.
+  - LoginRadius Xamarin sdk[portable class libraries] allow you to write code and produce libraries that can be shared across multiple platforms including Xamarin.Ios, Xamarin.Android and windows phone.

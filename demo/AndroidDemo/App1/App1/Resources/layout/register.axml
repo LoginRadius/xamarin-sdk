@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="FirstName"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:id="@+id/firstname"
+            android:textColor="#2299dd"
+            android:layout_marginTop="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="LastName"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:id="@+id/lastname"
+            android:textColor="#2299dd"
+            android:layout_marginTop="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Email"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:textColor="#2299dd"
+            android:layout_marginTop="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Password"
+            android:textColorHint="#2299dd"
+            android:background="@drawable/edittextborder"
+            android:inputType="textPassword"
+            android:id="@+id/password"
+            android:textColor="#2299dd"
+            android:layout_marginTop="10dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/register"
+            android:textColor="#fff"
+            android:background="#2299dd"
+            android:text="Register" />
+    </LinearLayout>
+</LinearLayout>
