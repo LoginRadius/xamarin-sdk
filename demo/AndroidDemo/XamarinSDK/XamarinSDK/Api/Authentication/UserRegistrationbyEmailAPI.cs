@@ -1,8 +1,5 @@
 ﻿using Refit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -11,7 +8,7 @@ using XamarinSDK.Models.UserProfile;
 
 namespace XamarinSDK.Api.Authentication
 {
-  public class UserRegistrationbyEmailAPI
+    public class UserRegistrationbyEmailAPI
     {
         public static async Task GetUserRegistrationbyEmail(string apikey, string sott, string verificationurl, string emailtemplate, UserIdentityCreateModel user,Action<LoginRadiusPostResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

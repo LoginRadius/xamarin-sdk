@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.EmailPromptAutoLogin
 {
-  public  class EmailPromptAutoLoginByUsernameAPI
+    public  class EmailPromptAutoLoginByUsernameAPI
     {
         public static async Task GetEmailPromptAutoLoginByUsername(Dictionary<string, string> myDictionary, Action<LoginRadiusPostResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {
@@ -21,13 +19,13 @@ namespace XamarinSDK.Api.EmailPromptAutoLogin
                 String apikey = myDictionary["apikey"];
                 String username = myDictionary["username"];
                 String clientguid = myDictionary["clientguid"];
-                String autologinemailtemplate = "";
+                String smartloginemailtemplate = "";
                 String welcomeemailtemplate = "";
                 String redirecturl = "";
 
-                if (myDictionary.ContainsKey("autologinemailtemplate"))
+                if (myDictionary.ContainsKey("smartloginemailtemplate"))
                 {
-                    autologinemailtemplate = myDictionary["autologinemailtemplate"];
+                    smartloginemailtemplate = myDictionary["smartloginemailtemplate"];
                 }
                 if (myDictionary.ContainsKey("welcomeemailtemplate"))
                 {
@@ -37,7 +35,7 @@ namespace XamarinSDK.Api.EmailPromptAutoLogin
                 {
                     redirecturl = myDictionary["redirecturl"];
                 }
-                var response = await api.GetEmailPromptAutoLoginByUsername(apikey, username, clientguid, autologinemailtemplate, welcomeemailtemplate, redirecturl);
+                var response = await api.GetEmailPromptAutoLoginByUsername(apikey, username, clientguid, smartloginemailtemplate, welcomeemailtemplate, redirecturl);
                 if (OnSuccess != null)
                 {
                     OnSuccess(response);

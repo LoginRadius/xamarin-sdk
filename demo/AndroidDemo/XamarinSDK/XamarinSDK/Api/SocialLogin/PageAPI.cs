@@ -1,8 +1,5 @@
 ﻿using Refit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +7,7 @@ using XamarinSDK.Models.Page;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-   public class PageAPI
+    public class PageAPI
     {
         public static async Task GetPage(string token, string pagename, Action<LoginRadiusPage> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

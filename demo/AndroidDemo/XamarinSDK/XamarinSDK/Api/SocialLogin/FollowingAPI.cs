@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models.Following;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-   public class FollowingAPI
+    public class FollowingAPI
     {
 
         public static async Task GetFollowing(string token, Action<List<LoginRadiusFollowing>> OnSuccess = null, Action<ErrorResponse> OnFailure = null)

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="demo.LoginPage" Title="Login">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="StartAndExpand">
+
+
+            <Button x:Name="loginwithfb"
+                    Margin="0,50,0,0"
+                Text="  Login With Facebook  "
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                TextColor="blue"
+                BorderWidth="1" 
+                BorderRadius="1"
+                Clicked="OnFacebookButtonClicked"
+                BorderColor="blue" />
+            <Button x:Name="loginwithgoogle"
+                Text="    Login With Google    "
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                    Margin="0,10,0,30"
+                TextColor="blue"
+                Clicked="OnGoogleButtonClicked"
+                BorderWidth="1" 
+                BorderRadius="1" 
+                BorderColor="blue" />
+
+         
+			<Label Text="Email"/>
+			<Entry x:Name="emailEntry" Placeholder="email"/>
+			<Label Text="Password" />
+			<Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
+			<Button Text="Login" Clicked="OnLoginButtonClicked" />
+			<Label x:Name="messageLabel" />
+
+            
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

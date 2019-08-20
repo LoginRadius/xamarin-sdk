@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.Authentication
 {
-   public class DeleteAccountAPI
+    public class DeleteAccountAPI
     {
         public static async Task GetDeleteAccount(Dictionary<string, string> myDictionary, Action<DeleteRequestAcceptedResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

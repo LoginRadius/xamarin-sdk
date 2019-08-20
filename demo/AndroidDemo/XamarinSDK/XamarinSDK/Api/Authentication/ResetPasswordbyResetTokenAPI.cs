@@ -2,8 +2,6 @@
 using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -11,7 +9,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.Authentication
 {
-   public class ResetPasswordbyResetTokenAPI
+    public class ResetPasswordbyResetTokenAPI
     {
         public static async Task GetResetPasswordbyResetToken(Dictionary<string, string> myDictionary, Action<LoginRadiusPostResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

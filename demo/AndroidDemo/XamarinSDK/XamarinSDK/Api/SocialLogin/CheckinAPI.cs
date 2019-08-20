@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models.CheckIn;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-   public class CheckinAPI
+    public class CheckinAPI
     {
         public static async Task GetCheckIn(string token, Action<List<LoginRadiusCheckIn>> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

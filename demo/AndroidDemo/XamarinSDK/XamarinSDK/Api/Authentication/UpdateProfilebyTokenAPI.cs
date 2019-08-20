@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -11,7 +9,7 @@ using XamarinSDK.Models.UserProfile;
 
 namespace XamarinSDK.Api.Authentication
 {
-   public class UpdateProfilebyTokenAPI
+    public class UpdateProfilebyTokenAPI
     {
         public static async Task GetUpdateProfilebyToken(Dictionary<string, string> myDictionary, UserIdentityCreateModel obj, Action<LoginRadiusPostResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

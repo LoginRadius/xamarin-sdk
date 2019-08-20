@@ -27,7 +27,7 @@ namespace App1
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-             string apikey = Intent.GetStringExtra("apikey") ?? "";
+            string apikey = Intent.GetStringExtra("apikey") ?? "";
             string appname = Intent.GetStringExtra("appname") ?? "";
             string provider = Intent.GetStringExtra("provider") ?? "";
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

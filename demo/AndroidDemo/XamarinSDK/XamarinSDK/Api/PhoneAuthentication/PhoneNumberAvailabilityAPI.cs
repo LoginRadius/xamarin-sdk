@@ -1,8 +1,5 @@
 ﻿using Refit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +7,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.PhoneAuthentication
 {
-   public class PhoneNumberAvailabilityAPI
+    public class PhoneNumberAvailabilityAPI
     {
         public static async Task GetPhoneNumberAvailability(string apikey, string phone, Action<LogiinRadiusExistsResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

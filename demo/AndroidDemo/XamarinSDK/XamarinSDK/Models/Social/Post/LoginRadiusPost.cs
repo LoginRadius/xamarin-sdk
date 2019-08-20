@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace XamarinSDK.Models.Social.Post
+﻿namespace XamarinSDK.Models.Social.Post
 {
-   public class LoginRadiusPost
+    public class LoginRadiusPost
     {
         public string ID { get; set; }
         public string Name { get; set; }

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
-using XamarinSDK.Api.EmailPromptAutoLogin;
-using XamarinSDK.Models;
-
 namespace XamarinSDK.HybridWebView
 {
     public class HybridWeb : Application
@@ -27,8 +20,7 @@ namespace XamarinSDK.HybridWebView
            
         }
 
-
-       
+        
 
         protected override void OnStart()
         {

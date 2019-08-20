@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models.Photo;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-   public class PhotoAPI
+    public class PhotoAPI
     {
         public static async Task GetPhoto(string token,string albumid, Action<List<LoginRadiusPhoto>> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

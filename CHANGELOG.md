@@ -1,6 +1,21 @@
 > **LoginRadius Xamarin SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documention](https://docs.loginradius.com/api/v2/mobile-libraries/xamarin-library)
 
 
+### Version 2.1.0-beta
+Released on **August 20,  2019**
+
+##### Enhancements
+
+  - Change all source code from portable class library to dotnet standard library framework.
+  - Added new Google and Facebook Native Login APIs.
+  - Added new a simple Demo For iOS Native.
+  - Added new a simple Demo For Cross-Platform Application(Xamarin Forms).
+
+##### Bug Fixes
+
+  - Fixed Web Social Login issue with iOS.
+
+
 ### Version 2.0.0
 Released on **September 06,  2017**
 

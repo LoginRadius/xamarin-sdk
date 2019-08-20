@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models.Event;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-  public class EventAPI
+    public class EventAPI
     {
         public static async Task GetEvent(string token, Action<List<LoginRadiusEvent>> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

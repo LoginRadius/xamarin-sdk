@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace XamarinSDK.Models.CustomerAuthentication.Phone
+﻿namespace XamarinSDK.Models.CustomerAuthentication.Phone
 {
-   public class PhoneSendOtpModel
+    public class PhoneSendOtpModel
     {
         public Data Data { get; set; }
     }

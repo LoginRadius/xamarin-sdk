@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.SocialLogin
 {
-  public  class StatusFetchingAPI
+    public  class StatusFetchingAPI
     {
         public static async Task GetStatus(string token, Action<List<LoginRadiusStatus>> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

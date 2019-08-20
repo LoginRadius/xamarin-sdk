@@ -2,8 +2,6 @@
 using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -11,7 +9,7 @@ using XamarinSDK.Models.CustomerAuthentication.Phone;
 
 namespace XamarinSDK.Api.PhoneAuthentication
 {
-   public class PhoneNumberUpdateAPI
+    public class PhoneNumberUpdateAPI
     {
         public static async Task GetPhoneNumberUpdate(Dictionary<string, string> myDictionary, Action<UpdatePhoneResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

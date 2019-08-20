@@ -1,8 +1,6 @@
 ﻿using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -10,7 +8,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.One_Click_Authentication
 {
-  public  class OneClickSigninByEmailAPI
+    public  class OneClickSigninByEmailAPI
     {
         public static async Task GetOneClickSigninByEmail(Dictionary<string, string> myDictionary, Action<LoginRadiusPostResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {

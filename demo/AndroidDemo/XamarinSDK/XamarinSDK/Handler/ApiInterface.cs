@@ -1,10 +1,9 @@
 ﻿using LoginRadiusSDK.V2.Models.Password;
 using Newtonsoft.Json.Linq;
 using Refit;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using XamarinSDK.Models;
 using XamarinSDK.Models.Album;
@@ -25,7 +24,7 @@ using XamarinSDK.Models.Video;
 
 namespace XamarinSDK.Handler
 {
-  public interface ApiInterface
+    public interface ApiInterface
     {
 
         /**
@@ -98,7 +97,7 @@ namespace XamarinSDK.Handler
 
         [Get("/identity/v2/auth/username")]
         Task<LogiinRadiusExistsResponse> GetCheckUserNameAvailability([AliasAs("apikey")]string apikey, [AliasAs("username")]string username);
-  
+
         [Get("/identity/v2/auth/account")]
         Task<LoginRadiusIdentity> GetReadAllProfiles([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token);
 
@@ -109,16 +108,16 @@ namespace XamarinSDK.Handler
         Task<LoginRadiusIdentity> GetSocialIdentity([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token);
 
         [Post("/identity/v2/auth/login")]
-        Task<LoginResponse> GetLoginbyEmail([AliasAs("apikey")]string apikey,[AliasAs("verificationurl")]string verificationurl, [AliasAs("loginurl")]string loginurl, [AliasAs("emailtemplate")]string emailtemplate, [AliasAs("g-recaptcha-response")]string recaptcha, [Body]  JObject obj);
+        Task<LoginResponse> GetLoginbyEmail([AliasAs("apikey")]string apikey, [AliasAs("verificationurl")]string verificationurl, [AliasAs("loginurl")]string loginurl, [AliasAs("emailtemplate")]string emailtemplate, [AliasAs("g-recaptcha-response")]string recaptcha, [Body]  JObject obj);
 
         [Post("/identity/v2/auth/login")]
         Task<LoginResponse> GetLoginbyUserName([AliasAs("apikey")]string apikey, [AliasAs("verificationurl")]string verificationurl, [AliasAs("loginurl")]string loginurl, [AliasAs("emailtemplate")]string emailtemplate, [AliasAs("g-recaptcha-response")]string recaptcha, [Body]  JObject obj);
 
         [Post("/identity/v2/auth/register")]
-        Task<LoginRadiusPostResponse> GetUserRegistrationbyEmail([AliasAs("apikey")]string apikey,[AliasAs("sott")]string sott, [AliasAs("verificationurl")]string verificationurl, [AliasAs("emailtemplate")]string emailtemplate,[Body] UserIdentityCreateModel user);
+        Task<LoginRadiusPostResponse> GetUserRegistrationbyEmail([AliasAs("apikey")]string apikey, [AliasAs("sott")]string sott, [AliasAs("verificationurl")]string verificationurl, [AliasAs("emailtemplate")]string emailtemplate, [Body] UserIdentityCreateModel user);
 
         [Post("/identity/v2/auth/password")]
-        Task<LoginRadiusPostResponse> GetForgotPassword([AliasAs("apikey")]string apikey,[AliasAs("resetpasswordurl")]string resetpasswordurl, [AliasAs("emailtemplate")]string emailtemplate, [Body]  JObject obj);
+        Task<LoginRadiusPostResponse> GetForgotPassword([AliasAs("apikey")]string apikey, [AliasAs("resetpasswordurl")]string resetpasswordurl, [AliasAs("emailtemplate")]string emailtemplate, [Body]  JObject obj);
 
         [Post("/identity/v2/auth/email")]
         Task<LoginRadiusPostResponse> GetAddEmail([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [AliasAs("emailtemplate")]string emailtemplate, [AliasAs("verificationurl")]string verificationurl, [Body]  JObject obj);
@@ -148,10 +147,10 @@ namespace XamarinSDK.Handler
         Task<LoginRadiusPostResponse> GetUpdateSecurityQuestionbyAccess_token([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [Body]  ResetPasswordBySecurityAnswerModel obj);
 
         [Delete("/identity/v2/auth/account")]
-        Task<DeleteRequestAcceptedResponse> GetDeleteAccount([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token,[AliasAs("deleteurl")]string deleteurl, [AliasAs("emailtemplate")]string emailtemplate);
+        Task<DeleteRequestAcceptedResponse> GetDeleteAccount([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [AliasAs("deleteurl")]string deleteurl, [AliasAs("emailtemplate")]string emailtemplate);
 
         [Delete("/identity/v2/auth/email")]
-        Task<LoginRadiusDeleteResponse> GetRemoveEmail([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token,[Body]  JObject obj);
+        Task<LoginRadiusDeleteResponse> GetRemoveEmail([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [Body]  JObject obj);
 
         [Delete("/identity/v2/auth/socialidentity")]
         Task<LoginRadiusDeleteResponse> GetUnlinkSocialIdentities([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [Body]  JObject obj);
@@ -188,10 +187,10 @@ namespace XamarinSDK.Handler
         Task<LoginRadiusPostResponse> GetPhoneUserRegistration([AliasAs("apikey")]string apikey, [AliasAs("sott")]string sott, [AliasAs("smstemplate")]string smstemplate, [AliasAs("verificationurl")]string verificationurl, [Body] UserIdentityCreateModel obj);
 
         [Put("/identity/v2/auth/phone")]
-        Task<UpdatePhoneResponse> GetPhoneNumberUpdate([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [AliasAs("smstemplate")]string smstemplate,[Body]  JObject obj);
+        Task<UpdatePhoneResponse> GetPhoneNumberUpdate([AliasAs("apikey")]string apikey, [AliasAs("access_token")]string access_token, [AliasAs("smstemplate")]string smstemplate, [Body]  JObject obj);
 
         [Put("/identity/v2/auth/password/otp")]
-        Task<LoginRadiusPostResponse> GetPhoneResetPasswordbyOtp([AliasAs("apikey")]string apikey,[AliasAs("smstemplate")]string smstemplate, [Body]  JObject obj);
+        Task<LoginRadiusPostResponse> GetPhoneResetPasswordbyOtp([AliasAs("apikey")]string apikey, [AliasAs("smstemplate")]string smstemplate, [Body]  JObject obj);
 
         [Put("/identity/v2/auth/phone/otp")]
         Task<LoginResponse> GetPhoneVerificationbyOtp([AliasAs("apikey")]string apikey, [AliasAs("otp")]string otp, [AliasAs("smstemplate")]string smstemplate, [Body]  JObject obj);
@@ -220,15 +219,20 @@ namespace XamarinSDK.Handler
       * 
       * */
 
-        [Get("/identity/v2/auth/login/autologin")]
-        Task<LoginRadiusPostResponse> GetEmailPromptAutoLoginByEmail([AliasAs("apikey")]string apikey, [AliasAs("email")]string email, [AliasAs("clientguid")]string clientguid, [AliasAs("autologinemailtemplate")]string autologinemailtemplate, [AliasAs("welcomeemailtemplate")]string welcomeemailtemplate, [AliasAs("redirecturl")]string redirecturl);
+        [Get("/identity/v2/auth/login/smartlogin")]
+        Task<LoginRadiusPostResponse> GetEmailPromptAutoLoginByEmail([AliasAs("apikey")]string apikey, [AliasAs("email")]string email, [AliasAs("clientguid")]string clientguid, [AliasAs("smartloginemailtemplate")]string smartloginemailtemplate, [AliasAs("welcomeemailtemplate")]string welcomeemailtemplate, [AliasAs("redirecturl")]string redirecturl);
 
-        [Get("/identity/v2/auth/login/autologin")]
-        Task<LoginRadiusPostResponse> GetEmailPromptAutoLoginByUsername([AliasAs("apikey")]string apikey, [AliasAs("username")]string username, [AliasAs("clientguid")]string clientguid, [AliasAs("autologinemailtemplate")]string autologinemailtemplate, [AliasAs("welcomeemailtemplate")]string welcomeemailtemplate, [AliasAs("redirecturl")]string redirecturl);
+        [Get("/identity/v2/auth/login/smartlogin")]
+        Task<LoginRadiusPostResponse> GetEmailPromptAutoLoginByUsername([AliasAs("apikey")]string apikey, [AliasAs("username")]string username, [AliasAs("clientguid")]string clientguid, [AliasAs("smartloginemailtemplate")]string smartloginemailtemplate, [AliasAs("welcomeemailtemplate")]string welcomeemailtemplate, [AliasAs("redirecturl")]string redirecturl);
 
-        [Get("/identity/v2/auth/login/autologin/ping")]
+        [Get("/identity/v2/auth/login/smartlogin/ping")]
         Task<LoginResponse> GetEmailPromptAutoLoginPing([AliasAs("apikey")]string apikey, [AliasAs("clientguid")]string clientguid);
 
+        [Get("/api/v2/access_token/facebook")]
+        Task<AccessTokenResponse> GetAccessTokenViaFacebookToken([AliasAs("apikey")]string apikey, [AliasAs("fb_access_token")]string fb_access_token);
+
+        [Get("/api/v2/access_token/google")]
+        Task<AccessTokenResponse> GetAccessTokenViaGoogleToken([AliasAs("apikey")]string apikey, [AliasAs("google_access_token")]string google_access_token);
     }
 
 

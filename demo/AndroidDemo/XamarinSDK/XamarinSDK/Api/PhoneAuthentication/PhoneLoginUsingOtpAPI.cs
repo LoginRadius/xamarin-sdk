@@ -2,8 +2,6 @@
 using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinSDK.Handler;
 using XamarinSDK.LoginRadiusException;
@@ -11,7 +9,7 @@ using XamarinSDK.Models;
 
 namespace XamarinSDK.Api.PhoneAuthentication
 {
-   public class PhoneLoginUsingOtpAPI
+    public class PhoneLoginUsingOtpAPI
     {
         public static async Task GetPhoneLoginUsingOtp(Dictionary<string, string> myDictionary, Action<LoginResponse> OnSuccess = null, Action<ErrorResponse> OnFailure = null)
         {
