@@ -8,6 +8,8 @@ LoginRadius centralizes it all in one place, making it easy to manage and access
 
 LoginRadius helps businesses boost user engagement on their web/mobile platform, manage online identities, utilize social media for marketing, capture accurate consumer data, and get unique social insight into their customer base.
 
+LoginRadius provides mobile SDKs for native mobile applications, such as native iOS and Android. Use the SDKs to cut down the lines of code and speed up your deployment, reducing the time and resources needed for native mobile implementation. Built-in error and exception handling and security updates let LoginRadius take the load off your team.
+
 Please visit [here](http://www.loginradius.com/) for more information.
 
 
